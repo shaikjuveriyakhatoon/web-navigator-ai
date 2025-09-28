@@ -36,3 +36,59 @@ web-navigator-ai-agent/
 │   └─ workflows/ci.yml
 │─ CONTRIBUTING.md      # how to contribute (post)
 │─ CODE_OF_CONDUCT.md   # optional (post)
+## Problem Statement  
+Manual web navigation for tasks like product searches, research, or comparisons is time-consuming.  
+
+## Solution  
+Our AI Web Navigator automates these tasks using:  
+- **LLM (OpenAI)** for understanding natural language instructions  
+- **FastAPI + Playwright** for planning & browser automation  
+- **React + Tailwind** for a user-friendly frontend  
+
+## Features  
+- Accepts natural language commands (e.g., “Find top 5 AI startups in 2025”)  
+- Automatically navigates the web and extracts results  
+- Simple web interface for input and output  
+- Backend + Frontend fully deployed  
+
+## Tech Stack  
+- **Backend**: FastAPI, Playwright, OpenAI API  
+- **Frontend**: React.js, Tailwind CSS  
+- **Deployment**: Render/Heroku (backend), GitHub Pages (frontend)  
+- **CI/CD**: GitHub Actions  
+
+##  Setup Instructions  
+
+### 1. Clone repository  
+```bash
+git clone https://github.com/your-username/web-navigator-ai-agent.git
+cd web-navigator-ai-agent
+
+
+cd backend
+python -m venv venv
+source venv/bin/activate   # (Linux/Mac)
+venv\Scripts\activate      # (Windows)
+pip install -r requirements.txt
+playwright install chromium
+uvicorn app:app --reload
+
+cd frontend
+npm install
+npm run dev
+
+
+---
+
+## Demo  
+```markdown
+##Demo  
+Example command:  
+> "Search for laptops under 50k and list top 5"  
+
+The agent will plan → open browser → extract results → show them in UI.  
+
+(Screenshot / GIF here)
+
+## 📜 License  
+This project is licensed under the MIT License.
